@@ -1,6 +1,12 @@
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+
 function App() {
   return (
-    <div>Shop</div>
+    <div className="wrapper">
+      <Header/>
+      <Footer/>
+    </div>
   );
 }
 

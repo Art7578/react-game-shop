@@ -1,0 +1,51 @@
+.logo {
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.nav {
+  float: right;
+  list-style: none;
+}
+
+.nav_item {
+  display: inline;
+  margin-left: 27px;
+  cursor: pointer;
+  transition: color 500ms ease;
+}
+
+.nav_item:hover {
+  color: orange;
+}
+
+.presentation {
+  margin: 50px 0;
+  background: url("../../img/games.jpg") no-repeat;
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.presentation::after {
+    content: 'The best games for your free time';
+    position: absolute;
+    top: 400px;
+    left: 50px;
+    width: 350px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.presentation::before {
+    content: 'at low prices';
+    position: absolute;
+    top: 500px;
+    left: 50px;
+    width: 350px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
