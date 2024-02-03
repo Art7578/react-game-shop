@@ -1,3 +1,7 @@
+.header {
+  position: relative;
+}
+
 .logo {
   font-weight: 800;
   font-size: 30px;
@@ -29,23 +33,56 @@
   position: relative;
 }
 
+.cart_btn {
+  font-weight: 700;
+  right: 20px;
+  bottom: 20px;
+  background: rgb(95, 94, 93);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  float: right;
+  cursor: pointer;
+  transition: transform 500ms ease;
+}
+
+.cart_btn:hover,
+.active {
+  background-color: yellow;
+  transform: scale(1.6);
+}
+
 .presentation::after {
-    content: 'The best games for your free time';
-    position: absolute;
-    top: 400px;
-    left: 50px;
-    width: 350px;
-    font-size: 40px;
-    font-weight: 700;
+  content: "The best games for your free time";
+  position: absolute;
+  top: 400px;
+  left: 50px;
+  width: 350px;
+  font-size: 40px;
+  font-weight: 700;
 }
 
 .presentation::before {
-    content: 'at low prices';
-    position: absolute;
-    top: 500px;
-    left: 50px;
-    width: 350px;
-    font-size: 20px;
-    font-weight: 400;
+  content: "at low prices";
+  position: absolute;
+  top: 500px;
+  left: 50px;
+  width: 350px;
+  font-size: 20px;
+  font-weight: 400;
 }
 
+.shop_cart {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 500px;
+  min-height: 100px;
+  background: wheat;
+  -webkit-box-shadow: 15px 18px 14px -15px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 15px 18px 14px -15px rgba(255, 255, 255, 1);
+  box-shadow: 15px 18px 14px -15px rgba(255, 255, 255, 1);
+  z-index: 500;
+}
