@@ -1,7 +1,22 @@
 import React, { useState } from 'react';
 import css from './Header.module.css'
+import Favorites from '../Favorites/Favorites';
 
-export default function Header() {
+const showOrders = (props) => {
+  return (<>
+    {props.favorites.map(el => (
+      <Favorites key={el.id} className={css.game} game={el}/>
+    ))}
+  </>)
+}
+
+const showNothing = () => {
+  return (<div className={css.empty}>
+    <h2>No games</h2>
+  </div>)
+}
+
+export default function Header(props) {
   let [cartActive, setCartActive] = useState(false);
 
   return (
@@ -16,7 +31,9 @@ export default function Header() {
 
         {cartActive && (
           <div className={css.shop_cart}>
-
+            {props.favorites.length > 0 
+            ? showOrders(props)
+            : showNothing()}
           </div>
         )}
       </div>

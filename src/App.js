@@ -1,13 +1,14 @@
 import React from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Items from "./components/Games/Games";
+import Games from "./components/Games/Games";
 
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      favorites: [],
       games: [
          {
             id: 1,
@@ -97,7 +98,7 @@ class App extends React.Component {
             release_date: "November 18, 2011",
             platforms: ["PC", "PlayStation 4", "Xbox One", "Nintendo Switch", "iOS", "Android"],
             game_modes: ["Single-player", "Multiplayer"],
-            description: "Minecraft is a sandbox video game developed and published by Mojang Studios. In Minecraft, players explore a blocky, procedurally-generated 3D world with infinite terrain, and may discover and extract raw materials, craft tools and items, and build structures or earthworks.",
+            description: "Minecraft is a sandbox video game developed and published by Mojang Studios. In Minecraft, players explore a blocky, procedurally-generated 3D world with infinite terrain, and may discover and extract raw materials, craft tools and Games, and build structures or earthworks.",
             price: "26.95$"
           },
           {
@@ -297,13 +298,26 @@ class App extends React.Component {
           }
       ]
     }
+    this.addToFavorites = this.addToFavorites.bind(this);
+  }
+
+  addToFavorites(game) {
+    let array = false;
+    this.state.favorites.forEach(el => {
+      if (el.id === game.id) {
+        array = true
+      }
+    })
+    if(!array) {
+      this.setState({favorites: [...this.state.favorites, game]})
+    }
   }
 
   render() {
     return (
       <div className="wrapper">
-        <Header/>
-        <Items games={this.state.games}/>
+        <Header favorites={this.state.favorites}/>
+        <Games games={this.state.games} onAdd={this.addToFavorites}/>
         <Footer/>
       </div>
     );

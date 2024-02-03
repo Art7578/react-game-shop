@@ -7,7 +7,7 @@ export class Games extends Component {
     return (
       <main className={css.container}>
         {this.props.games.map(el => (
-          <Game key={el.id} game={el}/>
+          <Game key={el.id} game={el} onAdd={this.props.onAdd}/>
         ))}
       </main>
     )
