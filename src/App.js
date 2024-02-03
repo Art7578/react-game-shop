@@ -112,7 +112,7 @@ class App extends React.Component {
             platforms: ["PC", "iOS", "Android"],
             game_modes: ["Multiplayer"],
             description: "Among Us is a multiplayer online social deduction game developed and published by InnerSloth. The game takes place in a space-themed setting where players are divided into crewmates and impostors. Crewmates must complete tasks while trying to identify the impostors among them, while impostors must sabotage the tasks and eliminate crewmates without being identified.",
-            price: "Free to play (with in-game purchases)"
+            price: "Free-to-play"
           },
           {
             id: 9,
@@ -299,6 +299,7 @@ class App extends React.Component {
       ]
     }
     this.addToFavorites = this.addToFavorites.bind(this);
+    this.deleteFavorite = this.deleteFavorite.bind(this);
   }
 
   addToFavorites(game) {
@@ -313,10 +314,14 @@ class App extends React.Component {
     }
   }
 
+  deleteFavorite(id) {
+    this.setState({favorites: this.state.favorites.filter(el => el.id !== id)})
+  }
+
   render() {
     return (
       <div className="wrapper">
-        <Header favorites={this.state.favorites}/>
+        <Header favorites={this.state.favorites} onDelete={this.deleteFavorite}/>
         <Games games={this.state.games} onAdd={this.addToFavorites}/>
         <Footer/>
       </div>

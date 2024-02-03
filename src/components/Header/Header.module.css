@@ -76,12 +76,9 @@
 
 .shop_cart {
   position: absolute;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-gap: 20px;
   top: 50px;
   right: 0;
-  width: 50%;
+  width: 80%;
   background: rgb(49, 49, 49);
   box-shadow: 10px 10px 5px 0px rgba(255, 255, 255, 1);
   z-index: 500;
@@ -89,8 +86,21 @@
   padding-bottom: 0;
 }
 
+.favorites_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+}
+
 .empty {
   font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.sum {
+  margin-bottom: 20px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 25px;
 }

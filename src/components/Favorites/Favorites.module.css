@@ -6,7 +6,8 @@
 }
 
 .img {
-  width: 200px;
+  width: 310px;
+  height: 400px;
   float: left;
   margin-right: 20px;
 }
@@ -20,4 +21,20 @@
   color: rgb(251, 255, 0);
   font-size: 17px;
   font-weight: 600;
+}
+
+.delete {
+  margin-top: 10px;
+  font-weight: 700;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 450ms ease;
+}
+
+.delete:hover {
+  background-color: red;
 }

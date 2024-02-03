@@ -3,11 +3,23 @@ import css from './Header.module.css'
 import Favorites from '../Favorites/Favorites';
 
 const showOrders = (props) => {
-  return (<>
-    {props.favorites.map(el => (
-      <Favorites key={el.id} className={css.game} game={el}/>
-    ))}
-  </>)
+  let sum = 0;
+  props.favorites.forEach(el => {
+    if (el.price !== "Free-to-play") {
+      sum += Number.parseFloat(el.price);
+    }
+  });
+
+  return (
+    <>
+    <div className={css.favorites_container}>
+      {props.favorites.map(el => (
+        <Favorites onDelete={props.onDelete} key={el.id} className={css.game} game={el}/>
+      ))}
+    </div>
+      <p className={css.sum}>Sum: {isNaN(sum) ? "0" : new Intl.NumberFormat().format(sum)}$</p>
+    </>
+  );
 }
 
 const showNothing = () => {
