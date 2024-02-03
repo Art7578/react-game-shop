@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/react-game-shop/static/css/main.2578360c.css",
-    "main.js": "/react-game-shop/static/js/main.ac8a1374.js",
+    "main.css": "/react-game-shop/static/css/main.0659bd43.css",
+    "main.js": "/react-game-shop/static/js/main.0c80c1eb.js",
     "static/media/games.jpg": "/react-game-shop/static/media/games.45adc3d7206627fa737f.jpg",
     "index.html": "/react-game-shop/index.html",
-    "main.2578360c.css.map": "/react-game-shop/static/css/main.2578360c.css.map",
-    "main.ac8a1374.js.map": "/react-game-shop/static/js/main.ac8a1374.js.map"
+    "main.0659bd43.css.map": "/react-game-shop/static/css/main.0659bd43.css.map",
+    "main.0c80c1eb.js.map": "/react-game-shop/static/js/main.0c80c1eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.2578360c.css",
-    "static/js/main.ac8a1374.js"
+    "static/css/main.0659bd43.css",
+    "static/js/main.0c80c1eb.js"
   ]
 }
