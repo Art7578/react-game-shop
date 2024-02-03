@@ -51,7 +51,7 @@
 .cart_btn:hover,
 .active {
   background-color: yellow;
-  transform: scale(1.6);
+  transform: scale(1.7);
 }
 
 .presentation::after {
