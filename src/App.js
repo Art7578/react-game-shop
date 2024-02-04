@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Games from "./components/Games/Games";
+import Genres from "./components/Genres/Genres";
 
 
 class App extends React.Component {
@@ -9,6 +10,7 @@ class App extends React.Component {
     super(props)
     this.state = {
       favorites: [],
+      currentGames: [],
       games: [
          {
             id: 1,
@@ -287,7 +289,7 @@ class App extends React.Component {
             id: 22,
             img: "Overwatch.jpg",
             title: "Overwatch",
-            genre: ["First-Person Shooter", "Hero Shooter"],
+            genre: ["First-Person Shooter"],
             developer: "Blizzard Entertainment",
             publisher: "Blizzard Entertainment",
             release_date: "May 24, 2016",
@@ -298,8 +300,10 @@ class App extends React.Component {
           }
       ]
     }
+    this.state.currentGames = this.state.games;
     this.addToFavorites = this.addToFavorites.bind(this);
     this.deleteFavorite = this.deleteFavorite.bind(this);
+    this.chooseGenre = this.chooseGenre.bind(this);
   }
 
   addToFavorites(game) {
@@ -318,11 +322,25 @@ class App extends React.Component {
     this.setState({favorites: this.state.favorites.filter(el => el.id !== id)})
   }
 
+  chooseGenre(genreKey) {
+    if (genreKey === 'all') {
+        this.setState({
+            currentGames: this.state.games
+        });
+    } else {
+        this.setState({
+            currentGames: this.state.games.filter(el => el.genre.map(g => g.toLowerCase()).includes(genreKey))
+        });
+    }
+  }
+
+
   render() {
     return (
       <div className="wrapper">
         <Header favorites={this.state.favorites} onDelete={this.deleteFavorite}/>
-        <Games games={this.state.games} onAdd={this.addToFavorites}/>
+        <Genres chooseGenre={this.chooseGenre}/>
+        <Games games={this.state.currentGames} onAdd={this.addToFavorites}/>
         <Footer/>
       </div>
     );
