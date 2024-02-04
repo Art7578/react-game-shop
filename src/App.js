@@ -3,6 +3,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Games from "./components/Games/Games";
 import Genres from "./components/Genres/Genres";
+import GameInformation from "./components/GameInformation/GameInformation";
 
 
 class App extends React.Component {
@@ -298,12 +299,15 @@ class App extends React.Component {
             description: "Overwatch is a team-based multiplayer first-person shooter developed and published by Blizzard Entertainment. Set in the near-future Earth, players choose from a diverse cast of heroes, each with their own unique abilities, and work together to complete objectives.",
             price: "39.99$"
           }
-      ]
+      ],
+      gameInfo: false,
+      fullGame: {}
     }
     this.state.currentGames = this.state.games;
     this.addToFavorites = this.addToFavorites.bind(this);
     this.deleteFavorite = this.deleteFavorite.bind(this);
     this.chooseGenre = this.chooseGenre.bind(this);
+    this.showGameInfo = this.showGameInfo.bind(this);
   }
 
   addToFavorites(game) {
@@ -334,13 +338,19 @@ class App extends React.Component {
     }
   }
 
+  showGameInfo(game) {
+    this.setState({fullGame: game})
+    this.setState({gameInfo: !this.state.gameInfo})
+  }
+
 
   render() {
     return (
       <div className="wrapper">
         <Header favorites={this.state.favorites} onDelete={this.deleteFavorite}/>
         <Genres chooseGenre={this.chooseGenre}/>
-        <Games games={this.state.currentGames} onAdd={this.addToFavorites}/>
+        <Games showGameInfo={this.showGameInfo} games={this.state.currentGames} onAdd={this.addToFavorites}/>
+        {this.state.gameInfo && <GameInformation onAdd={this.addToFavorites} showGameInfo={this.showGameInfo} game={this.state.fullGame}/>}
         <Footer/>
       </div>
     );

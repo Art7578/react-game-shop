@@ -84,9 +84,9 @@ export class Genres extends Component {
 
   render() {
     return (
-      <div className={css.genres}>
+      <div className={css.genres_container}>
         {this.state.genres.map(el => (
-            <button className={css.genre} key={el.key} onClick={() => this.props.chooseGenre(el.key)}>{el.name}</button>
+            <button className={css.genre_btn} key={el.key} onClick={() => this.props.chooseGenre(el.key)}>{el.name}</button>
         ))}
       </div>
     )

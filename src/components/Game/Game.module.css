@@ -25,27 +25,43 @@
 }
 
 .price {
-    color: rgb(251, 255, 0);
-    font-size: 17px;
-    font-weight: 300;
+  color: rgb(251, 255, 0);
+  font-size: 17px;
+  font-weight: 300;
 }
 
 .add_to_cart {
-    font-weight: 700;
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    background: rgb(255, 136, 0);
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-    border-radius: 50%;
-    cursor: pointer;
+  font-weight: 700;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: rgb(4, 240, 4);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .add_to_cart:hover {
   transition: transform 450ms ease;
   transform: scale(1.4) translateY(-6px);
 }
+
+/* .info_btn {
+  padding: 10px;
+  margin-left: 15px;
+  border-radius: 15px;
+  border: none;
+  font-weight: bold;
+  background: rgb(255, 102, 0);
+  color: azure;
+  cursor: pointer;
+}
+
+.info_btn:hover {
+  transition: transform 450ms ease;
+  transform: scale(1.15);
+} */

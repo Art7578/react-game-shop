@@ -1,0 +1,66 @@
+.game_backdrop {
+  /* width: 30%;
+  position: relative; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #5c5a5a8f;
+  z-index: 999;
+  overflow: auto;
+}
+
+.full_game {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    position: relative;
+    margin: 10% auto;
+    padding: 40px 30px;
+    background: #242323;
+    border-radius: 10px;
+}
+
+.img {
+  width: 400px;
+  height: 350px;
+  margin: auto;
+  border-radius: 10px;
+  transition: transform 500ms ease;
+}
+
+.img:hover {
+    transform: scale(1.05);
+}
+
+.item {
+  margin: 15px 25px;
+  color: #f1e3e3;
+}
+
+.price {
+    color: rgb(251, 255, 0);
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.add_to_cart {
+  font-weight: 700;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: rgb(4, 240, 4);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.add_to_cart:hover {
+  transition: transform 450ms ease;
+  transform: scale(1.4) translateY(-6px);
+}
